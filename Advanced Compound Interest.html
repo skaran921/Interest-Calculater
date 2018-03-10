@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Advanced Compound Interest
+</title>
+<script>
+function interest(){
+var p=document.getElementById('p').value;
+var r=document.getElementById('r').value;
+var t=document.getElementById('t').value;
+var o=document.getElementById('o').value;
+if(!p || !r || !t || isNaN(p) || isNaN(r)|| isNaN(t))
+{
+alert("Please Enter Correct Data.")
+}
+else
+{
+if(o=="Yearly")
+{
+var x=parseInt(r);
+var xx=x+100;
+var y=xx/100;
+var z=Math.pow(y,t);
+var a=p*z;
+var i=a-p;
+alert('interest is: '+i.toFixed(2));
+document.getElementById('a').value=a.toFixed(2);
+document.getElementById('i').value=i.toFixed(2);
+}
+else if(o=="Quarterly")
+{
+var m=r/4;
+var x=parseInt(m);
+var xx=x+100;
+var y=xx/100;
+var n=t*4;
+var z=Math.pow(y,n);
+var a=p*z;
+var i=a-p;
+alert('interest is: '+i.toFixed(2))
+document.getElementById('a').value=a.toFixed(2);
+document.getElementById('i').value=i.toFixed(2);
+}
+else if(o=="Half-Yearly")
+{
+var m=r/2;
+var x=parseInt(m);
+var xx=x+100;
+var y=xx/100;
+var n=t*2;
+var z=Math.pow(y,n);
+var a=p*z;
+var i=a-p;
+alert('interest is: '+i.toFixed(2))
+document.getElementById('a').value=a.toFixed(2);
+document.getElementById('i').value=i.toFixed(2);
+}
+else if(o=="Monthly")
+{
+var m=r/12;
+var x=parseInt(m);
+var xx=x+100;
+var y=xx/100;
+var n=t*12;
+var z=Math.pow(y,n);
+var a=p*z;
+var i=a-p;
+alert('interest is: '+i.toFixed(2))
+document.getElementById('a').value=a.toFixed(2);
+document.getElementById('i').value=i.toFixed(2);
+}
+
+else
+{
+   alert('Please Select a Correct Option');
+}
+}
+}
+</script>
+<style>
+body,h1,form,b{width:auto;height:auto;text-shadow:1px 1px 2px #996;box-shadow:1px 1px 2px #996;}
+input{padding:10px;}
+input,label,select,option{display:block;font-weight:bold;}
+input[type="tel"]{border-style:inset;border-width:8px 8px 8px 8px;box-shadow:1px 1px 2px #996;text-shadow:1px 1px 2px #996;border-radius:7px;}
+input[type="button"]:hover{opacity:.8;color:white;background-color:blue;}
+#i,#a{color:red;border-style:inset;border-width:5px 5px 5px 5px;box-shadow:1px 1px 2px #996;
+text-shadow:1px 1px 1px #996;font-weight:bold;border-radius:7px;}
+form{width:400px;}
+</style>
+</head>
+<body>
+<h1>
+<center>
+Advanced Compound interest Calculator
+</center>
+</h1>
+<form>
+<fieldset>
+<legend><b>Advanced Compound interest Calculation Form</b></legend>
+<label>Enter Principle:</label>
+<input type="tel" id="p" placeholder="Principle Enter Here" required>
+<label>Enter Rate:</label>
+<input type="tel" id="r" placeholder="Please not Enter % sign" required>
+<label>Enter Time(in Year):</label>
+<input type="tel" id="t" placeholder="Time Enter Here" required>
+<label>Compounded Yearly</label>
+<fieldset>
+<legend><b>Select Compound Option</b></legend>
+<select id="o">
+<option>Yearly</option>
+<option>Half-Yearly</option>
+<option>Quarterly </option>
+<option>Monthly</option>
+</select>
+</fieldset>
+<input type="button" value="Calculate"onclick="interest();"> 
+</fieldset>
+</form>
+<form>
+<fieldset>
+<legend><b>Results See below:</b></legend>
+<label>Amount is:</label>
+<input type="tel" id="a" placeholder="This Show Amount" disabled>
+<label>interest is:</label>
+<input type="tel" id="i" placeholder="This Show Interest" disabled>
+<input type="button" value="About"onclick="window.alert('This Small App Designed and Develope by Karan Soni V1.1');"> 
+<input type="button" value="Close"onclick="window.close();"> 
+</fieldset>
+</form>
+<footer>
+<b>&copy;2017,All Rights Not Reserved</b>
+</footer>
+</body>
+</html>
